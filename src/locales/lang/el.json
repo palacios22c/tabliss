@@ -16,6 +16,7 @@
   "plugins.weather.high": "Υψηλότερη θερμοκρασία",
   "plugins.weather.humidity": "Υγρασία",
   "plugins.weather.low": "Χαμηλότερη θερμοκρασία",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Ρυθμίσεις",
   "settings.translationCredits": "Ελληνική μετάφραση από τους @Damian96 και @ChrisKar96",
   "widgets": "Widgets"

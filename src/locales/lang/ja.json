@@ -16,6 +16,7 @@
   "plugins.weather.high": "最高",
   "plugins.weather.humidity": "湿度",
   "plugins.weather.low": "最低",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Settings",
   "settings.translationCredits": "Japanese translation by Kodaka",
   "widgets": "Widgets"

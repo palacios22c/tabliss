@@ -16,6 +16,7 @@
   "plugins.weather.high": "Cao",
   "plugins.weather.humidity": "Độ ẩm",
   "plugins.weather.low": "Thấp",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Cài đặt",
   "settings.translationCredits": "Bản dịch tiếng Việt của Phạm Ngọc Thạch",
   "widgets": "Widget"

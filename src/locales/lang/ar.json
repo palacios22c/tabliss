@@ -16,6 +16,7 @@
   "plugins.weather.high": "عالي",
   "plugins.weather.humidity": "متوسط",
   "plugins.weather.low": "منخفض",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "الأِعدادات",
   "settings.translationCredits": "حسن عبدالله",
   "widgets": "العناصر"

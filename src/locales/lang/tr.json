@@ -16,6 +16,7 @@
   "plugins.weather.high": "Yüksek",
   "plugins.weather.humidity": "Nem",
   "plugins.weather.low": "Düşük",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Ayarlar",
   "settings.translationCredits": "YakisikliBaran",
   "widgets": "Araçlar"

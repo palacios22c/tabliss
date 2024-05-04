@@ -16,6 +16,7 @@
   "plugins.weather.high": "Didžiausia",
   "plugins.weather.humidity": "Humidity",
   "plugins.weather.low": "Mažiausia",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Nustatymai",
   "settings.translationCredits": "Į lietuvių kalbą išvertė Paulius Gečas",
   "widgets": "Valdikliai"

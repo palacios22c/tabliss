@@ -16,6 +16,7 @@
   "plugins.weather.high": "Највиша температура",
   "plugins.weather.humidity": "Humidity",
   "plugins.weather.low": "Најнижа температура",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Подешавања",
   "settings.translationCredits": " ",
   "widgets": "Виџети"

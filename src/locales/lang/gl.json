@@ -16,6 +16,7 @@
   "plugins.weather.high": "Máxima",
   "plugins.weather.humidity": "Humidade",
   "plugins.weather.low": "Mínima",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Opcións",
   "settings.translationCredits": "Tradución feita por Daniel Portela",
   "widgets": "Widgets"

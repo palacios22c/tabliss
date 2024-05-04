@@ -16,6 +16,7 @@
   "plugins.weather.high": "Vysoká",
   "plugins.weather.humidity": "Vlhkost vzduchu",
   "plugins.weather.low": "Nízká",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Nastavení",
   "settings.translationCredits": "Český překlad vytvořil Petr Schmidt",
   "widgets": "Widgety"

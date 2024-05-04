@@ -15,6 +15,7 @@
   "plugins.weather.high": "גבוהה",
   "plugins.weather.humidity": "לחות",
   "plugins.weather.low": "נמוכה",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "הגדרות",
   "settings.translationCredits": "Omer I.S. (omeritzicschwartz@gmail.com) ",
   "widgets": "יישומונים"

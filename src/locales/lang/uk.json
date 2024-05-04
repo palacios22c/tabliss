@@ -16,6 +16,7 @@
   "plugins.weather.high": "Найвища температура",
   "plugins.weather.humidity": "Вологість",
   "plugins.weather.low": "Найнижча температура",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Налаштування",
   "settings.translationCredits": "Переклав українською Олексій Лозов'ягін. Допрацював docteer",
   "widgets": "Віджети"

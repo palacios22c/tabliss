@@ -16,6 +16,7 @@
   "plugins.weather.high": "Wysoka",
   "plugins.weather.humidity": "Wilgotność",
   "plugins.weather.low": "Niska",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Ustawienia",
   "settings.translationCredits": "Polish translation by achook & nikkehtine",
   "widgets": "Widżety"

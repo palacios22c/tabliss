@@ -16,6 +16,7 @@
   "plugins.weather.high": "Максимум",
   "plugins.weather.humidity": "Влажность",
   "plugins.weather.low": "Минимум",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "Настройки",
   "settings.translationCredits": "Перевёл на русский Илья Бирюков",
   "widgets": "Виджеты"

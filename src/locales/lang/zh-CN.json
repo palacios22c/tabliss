@@ -16,6 +16,7 @@
   "plugins.weather.high": "高",
   "plugins.weather.humidity": "湿度",
   "plugins.weather.low": "低",
+  "plugins.weather.windSpeed": "Wind speed",
   "settings": "设置",
   "settings.translationCredits": " ",
   "widgets": "组件"
