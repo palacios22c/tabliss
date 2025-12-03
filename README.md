@@ -26,11 +26,7 @@
 
 ## Maintained Fork of Tabliss
 
-This repository is a maintained fork of Tabliss, originally a customizable new tab page for Firefox and Chrome. The original project has been abandoned, with no updates for over a year and numerous unmerged pull requests.
-
-### Why This Fork?
-
-I cloned the repository and merged most pending pull requests to bring in improvements and bug fixes. Moving forward, I will actively maintain and update this fork to keep Tabliss functional and up to date.
+This repository is a maintained fork of Tabliss, originally a customizable new tab page for Firefox and Chrome. The original project has been abandoned, with no updates for over a year and numerous unmerged pull requests. I cloned the repository and merged most pending pull requests to bring in improvements and bug fixes. Moving forward, I will actively maintain and update this fork to keep Tabliss functional and up to date.
 
 ### What's Next?
 
@@ -41,6 +37,26 @@ I cloned the repository and merged most pending pull requests to bring in improv
 If you were a contributor to the original repo or have ideas for improvements, feel free to open an issue or submit a pull request. Let’s keep Tabliss alive!
 
 ---
+
+## Brief Overview of a Few Improvements Over Tabliss
+
+- Customization
+  - Support for custom search engines and browser defaults
+  - Many more style options in display/font settings (eg. scale, underline, text outline, custom css class)
+
+- Widgets
+  - Time Tracker, Bitcoin Mempool, Top Sites, Binary Clock, Bookmarks, Custom HTML.
+  - Enhancements: Daily Routine for Todos, Bible verses in Quotes, Markdown in Notes
+  - "Free Move" mode for dragging widgets (very beta, but functional)
+
+- Backgrounds & Visuals
+  - Wikimedia Image of the Day, NASA APOD
+  - Support for Videos, GIFs, and online image URLs
+  - Automatic night dimming and random gradients
+
+- Interface & Accessibility
+  - Full dark mode
+  - Complete translation support for all settings
 
 ## Installation
 
