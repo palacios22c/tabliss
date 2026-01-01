@@ -375,6 +375,8 @@
   "settings.advancedOutline": "Gelişmiş (Dış Hat)",
   "settings.basicModeDescription": "Temel mod, yalnızca tek bir boyuta sahip olabilen bir metin gölgesi kullanır.",
   "settings.basicOutline": "Temel (Metin Gölgesi)",
+  "settings.customClass.placeholder": "Enter a custom class for easier styling",
+  "settings.customClass.title": "Custom CSS Class",
   "settings.description": "ayarlarınız",
   "settings.export": "dışa aktar",
   "settings.font.black": "Çok Kalın",

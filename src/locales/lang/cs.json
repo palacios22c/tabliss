@@ -375,6 +375,8 @@
   "settings.advancedOutline": "Pokročilý (Obrys)",
   "settings.basicModeDescription": "Základní režim používá stín textu, který může mít pouze jednu velikost.",
   "settings.basicOutline": "Základní (Stín textu)",
+  "settings.customClass.placeholder": "Enter a custom class for easier styling",
+  "settings.customClass.title": "Custom CSS Class",
   "settings.description": "vaše nastavení",
   "settings.export": "exportovat",
   "settings.font.black": "Černé",

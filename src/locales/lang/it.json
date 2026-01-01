@@ -375,6 +375,8 @@
   "settings.advancedOutline": "Advanced (Stroke)",
   "settings.basicModeDescription": "Basic mode uses a text shadow that can only have one size.",
   "settings.basicOutline": "Basic (Text Shadow)",
+  "settings.customClass.placeholder": "Enter a custom class for easier styling",
+  "settings.customClass.title": "Custom CSS Class",
   "settings.description": "your settings",
   "settings.export": "esportare",
   "settings.font.black": "Black",

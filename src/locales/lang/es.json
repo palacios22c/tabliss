@@ -375,6 +375,8 @@
   "settings.advancedOutline": "Avanzado (Trazo)",
   "settings.basicModeDescription": "El modo básico usa texto combreado que solo tiene un tamaño.",
   "settings.basicOutline": "Básico (Sombreado)",
+  "settings.customClass.placeholder": "Enter a custom class for easier styling",
+  "settings.customClass.title": "Custom CSS Class",
   "settings.description": "tu configuración",
   "settings.export": "exportar",
   "settings.font.black": "Negro",

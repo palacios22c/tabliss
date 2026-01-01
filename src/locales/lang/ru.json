@@ -375,6 +375,8 @@
   "settings.advancedOutline": "Расширенный (Обводка)",
   "settings.basicModeDescription": "В базовом режиме используется текстовая тень, которая может иметь только один размер.",
   "settings.basicOutline": "Базовый (Тень текста)",
+  "settings.customClass.placeholder": "Enter a custom class for easier styling",
+  "settings.customClass.title": "Custom CSS Class",
   "settings.description": "ваших настроек",
   "settings.export": "экспорт",
   "settings.font.black": "Очень толстый",
