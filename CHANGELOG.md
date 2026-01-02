@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 I also attempt to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
-## [Unreleased]
+## [1.6.0] - 1/1/2026 | Large Feature and Bugfix Update (FINALLY)
 
 ### Added
 
