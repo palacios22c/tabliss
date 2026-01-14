@@ -87,7 +87,8 @@ const config = {
       ],
     }),
     new HtmlWebpackPlugin({
-      template: `./target/${buildTarget}/index.html`,
+      template: "./target/index.html",
+      buildTarget,
     }),
     new MiniCssExtractPlugin({
       filename: isWeb ? "[name].[contenthash:12].css" : "[name].css",

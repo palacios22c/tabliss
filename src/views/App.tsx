@@ -11,7 +11,7 @@ import { Settings } from "./settings";
 import Errors from "./shared/Errors";
 import StoreError from "./shared/StoreError";
 import { db } from "../db/state";
-import { useSystemTheme } from "../hooks";
+import { useSystemTheme, useFavicon } from "../hooks";
 
 function setHighlighting() {
   const checked = db.cache.get("highlightingEnabled");
@@ -51,6 +51,8 @@ const Root: React.FC = () => {
       themePreference === "system" ? systemIsDark : themePreference === "dark";
     document.body.className = isDark ? "dark" : "";
   }, [themePreference, systemIsDark]);
+
+  useFavicon();
 
   const pushError = usePushError();
   const handleError =
