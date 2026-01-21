@@ -93,10 +93,10 @@ async function run() {
     await fs.writeFile('INSTALL.md', install.replace(/tablissng-\d+\.\d+\.\d+\.\d+\.xpi/g, `tablissng-${version}.xpi`));
 
     console.log('Pushing changes...');
-    execSync('git config user.name "BookCatKid"', { stdio: 'inherit' });
-    execSync('git config user.email "99609593+BookCatKid@users.noreply.github.com"', { stdio: 'inherit' });
+    execSync('git config user.name "github-actions[bot]"', { stdio: 'inherit' });
+    execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { stdio: 'inherit' });
     execSync('git add updates.json README.md INSTALL.md', { stdio: 'inherit' });
-    execSync(`git commit -m "chore: release ${version}"`, { stdio: 'inherit' });
+    execSync('git commit -m "chore: signed firefox nightly build"', { stdio: 'inherit' });
     execSync('git push', { stdio: 'inherit' });
 
     console.log('Done.');
