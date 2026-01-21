@@ -45,7 +45,8 @@ async function run() {
     // Honestly no idea if this even works
     const manifestPath = './dist/firefox/manifest.json';
     const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
-    manifest.browser_specific_settings.gecko.update_url = `https://raw.githubusercontent.com/BookCatKid/TablissNG/main/updates.json`;
+    manifest.version = version;
+    manifest.browser_specific_settings.gecko.update_url = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/updates.json`;
     await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
     execSync(`npx web-ext sign --source-dir ./dist/firefox --artifacts-dir ./dist/signed --channel unlisted`, { stdio: 'inherit' });
