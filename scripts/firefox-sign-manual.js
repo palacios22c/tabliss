@@ -11,8 +11,13 @@ const GH_HEADERS = {
 
 async function run() {
   try {
-    if (!process.env.GITHUB_TOKEN || !process.env.WEB_EXT_API_KEY || !process.env.WEB_EXT_API_SECRET) {
-      throw new Error('Missing secrets');
+    const missing = [];
+    if (!process.env.GITHUB_TOKEN) missing.push('GITHUB_TOKEN');
+    if (!process.env.WEB_EXT_API_KEY) missing.push('WEB_EXT_API_KEY');
+    if (!process.env.WEB_EXT_API_SECRET) missing.push('WEB_EXT_API_SECRET');
+
+    if (missing.length > 0) {
+      throw new Error(`Missing secrets: ${missing.join(', ')}`);
     }
 
     console.log('Running tests...');

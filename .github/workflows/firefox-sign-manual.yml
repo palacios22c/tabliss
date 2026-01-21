@@ -26,8 +26,8 @@ jobs:
         run: npm run sign:firefox
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
-          WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
+          WEB_EXT_API_KEY: ${{ secrets.AMO_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_SECRET }}
           GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
           UNSPLASH_API_KEY: ${{ secrets.UNSPLASH_API_KEY }}
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
