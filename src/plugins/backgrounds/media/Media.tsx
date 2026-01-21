@@ -14,7 +14,7 @@ const Media: React.FC<Props> = ({ cache = defaultCache }) => {
   const item = cache[index];
   const url = useObjectUrl(item);
   const background = useValue(db, "background");
-  const { scale } = background.display;
+  const { scale, position } = background.display;
 
   if (!item || !url) return null;
 
@@ -30,6 +30,7 @@ const Media: React.FC<Props> = ({ cache = defaultCache }) => {
           src={url}
           style={{
             objectFit: scale ? "cover" : "contain",
+            objectPosition: position,
           }}
         />
       )}

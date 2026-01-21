@@ -10,6 +10,8 @@ preloadBaseIcons().catch(console.error);
 // Render app into root element
 createRoot(document.getElementById("root")!).render(<Root />);
 
-if (!DEV) {
+// Register the service worker only for production web builds.
+// Non-web targets handle service workers via their own manifests.
+if (!DEV && BUILD_TARGET === "web") {
   registerServiceWorker();
 }
