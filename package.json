@@ -31,6 +31,7 @@
     "prettier:check": "prettier --check .",
     "test": "tsc -p tsconfig.test.json && jest",
     "translations": "node ./scripts/translations.js",
+    "sign:firefox": "node ./scripts/firefox-sign-manual.js",
     "deps:check": "npx npm-check",
     "deps:update": "npx npm-check -u",
     "typecheck": "tsc --noEmit --skipLibCheck",
