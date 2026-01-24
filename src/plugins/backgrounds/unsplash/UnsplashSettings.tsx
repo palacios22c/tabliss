@@ -58,11 +58,7 @@ const UnsplashSettings: React.FC<Props> = ({ data = defaultData, setData }) => {
           checked={data.by === "search"}
           onChange={() => setData({ ...data, by: "search" })}
         />{" "}
-        <FormattedMessage
-          id="backgrounds.unsplash.search"
-          defaultMessage="Search"
-          description="Search title"
-        />
+        <FormattedMessage {...backgroundMessages.search} />
       </label>
 
       <label>
@@ -159,11 +155,7 @@ const UnsplashSettings: React.FC<Props> = ({ data = defaultData, setData }) => {
       {data.by === "search" && (
         <>
           <label>
-            <FormattedMessage
-              id="backgrounds.unsplash.searchTerm"
-              defaultMessage="Search Term"
-              description="Search Term title"
-            />
+            <FormattedMessage {...backgroundMessages.searchTerm} />
             <DebounceInput
               type="text"
               value={data.search}

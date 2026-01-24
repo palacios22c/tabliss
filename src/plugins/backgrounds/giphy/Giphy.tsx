@@ -13,19 +13,26 @@ const Giphy: React.FC<Props> = ({
   loader,
 }) => {
   const { item, go, handlePause } = useBackgroundRotation({
-    fetch: () => {
-      return getGifs({ tag: data.tag, nsfw: data.nsfw }, loader);
-    },
+    fetch: () => getGifs(data, loader),
     cacheObj: { cache, setCache },
     data,
     setData,
     loader,
-    deps: [data.tag, data.nsfw],
+    deps: [data.by, data.tag, data.nsfw],
   });
 
   const url = item?.url || null;
 
   if (!item || !url) return null;
+
+  const leftInfo = [
+    {
+      label: (
+        <img src={giphyLogo} alt="Powered by GIPHY" width={101} height={36} />
+      ),
+      url: item.link || "https://giphy.com/",
+    },
+  ];
 
   return (
     <BaseBackground
@@ -35,20 +42,8 @@ const Giphy: React.FC<Props> = ({
       onPause={handlePause}
       onPrev={go(-1)}
       onNext={go(1)}
-      showInfo={data.showTitle}
-      leftInfo={[
-        {
-          label: (
-            <img
-              src={giphyLogo}
-              alt="Powered by GIPHY"
-              width={101}
-              height={36}
-            />
-          ),
-          url: item.link || "https://giphy.com/",
-        },
-      ]}
+      showInfo={true}
+      leftInfo={leftInfo}
     />
   );
 };

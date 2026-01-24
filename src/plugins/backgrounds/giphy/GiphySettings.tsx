@@ -1,65 +1,105 @@
 import React, { FC } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, defineMessages, useIntl } from "react-intl";
 import { Props, defaultData } from "./types";
 import { DebounceInput } from "../../shared";
-import { backgroundMessages } from "../../../locales/messages";
 import BaseSettings from "../base/BaseSettings";
+import { backgroundMessages } from "../../../locales/messages";
 
-const GiphySettings: FC<Props> = ({ data = defaultData, setData }) => (
-  <div className="GiphySettings">
-    <BaseSettings
-      data={data}
-      setData={setData}
-      title={
+const messages = defineMessages({
+  searchPlaceholder: {
+    id: "backgrounds.giphy.search.placeholder",
+    defaultMessage: "Try 'nature' or 'trippy'...",
+    description: "Placeholder text for Giphy search input",
+  },
+});
+
+const GiphySettings: FC<Props> = ({ data = defaultData, setData }) => {
+  const intl = useIntl();
+
+  return (
+    <div className="GiphySettings">
+      <BaseSettings
+        data={data}
+        setData={setData}
+        title={
+          <FormattedMessage
+            id="backgrounds.giphy.showNewGif"
+            defaultMessage="Show a new GIF"
+          />
+        }
+      />
+
+      <label>
+        <input
+          type="radio"
+          checked={data.by === "trending"}
+          onChange={() => setData({ ...data, by: "trending" })}
+        />{" "}
         <FormattedMessage
-          id="backgrounds.giphy.showNewGif"
-          defaultMessage="Show a new GIF"
+          id="backgrounds.giphy.trending"
+          defaultMessage="Trending"
+          description="Trending mode for Giphy"
         />
-      }
-    />
-    <label>
-      <FormattedMessage
-        id="backgrounds.giphy.tag"
-        defaultMessage="Tag"
-        description="Tag title"
-      />
-      <DebounceInput
-        type="text"
-        value={data.tag}
-        onChange={(value) => setData({ ...data, tag: value })}
-        wait={500}
-      />
-    </label>
-    <p className="info">
-      <FormattedMessage
-        id="backgrounds.giphy.tag.info"
-        defaultMessage="Separate multiple tags with a comma"
-        description="Tag info"
-      />
-    </p>
+      </label>
 
-    <label>
-      <input
-        type="checkbox"
-        checked={data.nsfw}
-        onChange={() => setData({ ...data, nsfw: !data.nsfw })}
-      />{" "}
-      <FormattedMessage
-        id="backgrounds.giphy.safeSearch"
-        defaultMessage="Include NSFW content"
-        description="Include NSFW content checkbox label"
-      />
-    </label>
+      <label>
+        <input
+          type="radio"
+          checked={data.by === "random" || !data.by} // Old data would have by undefined and old default was random
+          onChange={() => setData({ ...data, by: "random" })}
+        />{" "}
+        <FormattedMessage
+          id="backgrounds.giphy.random"
+          defaultMessage="Random"
+          description="Random mode for Giphy"
+        />
+      </label>
 
-    <label>
-      <input
-        type="checkbox"
-        checked={data.showTitle}
-        onChange={() => setData({ ...data, showTitle: !data.showTitle })}
-      />{" "}
-      <FormattedMessage {...backgroundMessages.showTitle} />
-    </label>
-  </div>
-);
+      <label>
+        <input
+          type="radio"
+          checked={data.by === "search"}
+          onChange={() => setData({ ...data, by: "search" })}
+        />{" "}
+        <FormattedMessage {...backgroundMessages.search} />
+      </label>
+
+      {data.by !== "trending" && (
+        <>
+          <label>
+            <FormattedMessage {...backgroundMessages.searchTerm} />
+            <DebounceInput
+              type="text"
+              value={data.tag}
+              placeholder={intl.formatMessage(messages.searchPlaceholder)}
+              onChange={(value) => setData({ ...data, tag: value })}
+              wait={500}
+            />
+          </label>
+          <p className="info">
+            <FormattedMessage
+              id="backgrounds.giphy.search.info"
+              defaultMessage="Separate multiple terms with a comma"
+              description="Search info"
+            />
+          </p>
+        </>
+      )}
+
+      <label>
+        <input
+          type="checkbox"
+          checked={data.nsfw}
+          onChange={() => setData({ ...data, nsfw: !data.nsfw })}
+        />{" "}
+        <FormattedMessage
+          id="backgrounds.giphy.nsfw"
+          defaultMessage="Allow NSFW content"
+          description="Label for Giphy NSFW toggle"
+        />
+      </label>
+    </div>
+  );
+};
 
 export default GiphySettings;
