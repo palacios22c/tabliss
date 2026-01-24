@@ -2,9 +2,21 @@ import React, { FC } from "react";
 import { FormattedMessage } from "react-intl";
 import { Props, defaultData } from "./types";
 import { DebounceInput } from "../../shared";
+import { backgroundMessages } from "../../../locales/messages";
+import BaseSettings from "../base/BaseSettings";
 
 const GiphySettings: FC<Props> = ({ data = defaultData, setData }) => (
   <div className="GiphySettings">
+    <BaseSettings
+      data={data}
+      setData={setData}
+      title={
+        <FormattedMessage
+          id="backgrounds.giphy.showNewGif"
+          defaultMessage="Show a new GIF"
+        />
+      }
+    />
     <label>
       <FormattedMessage
         id="backgrounds.giphy.tag"
@@ -37,6 +49,15 @@ const GiphySettings: FC<Props> = ({ data = defaultData, setData }) => (
         defaultMessage="Include NSFW content"
         description="Include NSFW content checkbox label"
       />
+    </label>
+
+    <label>
+      <input
+        type="checkbox"
+        checked={data.showTitle}
+        onChange={() => setData({ ...data, showTitle: !data.showTitle })}
+      />{" "}
+      <FormattedMessage {...backgroundMessages.showTitle} />
     </label>
   </div>
 );
