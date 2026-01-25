@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Bağlantılar yeni sekmede açılır",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "Gitmek için tıkla veya {number} tuşuna bas",
+  "plugins.links.shortcutHint": "Gitmek için tıkla veya {key} tuşuna bas",
   "plugins.links.showQuickLinks": "Show quick links",
   "plugins.links.sortBy": "Bağlantıları sırala:",
   "plugins.links.sortBy.icon": "Simge türü",

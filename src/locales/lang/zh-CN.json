@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Links open in a new tab",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "按 {number} 或点击访问",
+  "plugins.links.shortcutHint": "按 {key} 或点击访问",
   "plugins.links.showQuickLinks": "Show quick links",
   "plugins.links.sortBy": "Sort links by",
   "plugins.links.sortBy.icon": "Icon type",

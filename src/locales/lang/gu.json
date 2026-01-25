@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Links open in a new tab",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "સાઇટ પર જવા માટે {number} ક્લિક કરો",
+  "plugins.links.shortcutHint": "સાઇટ પર જવા માટે {key} ક્લિક કરો",
   "plugins.links.showQuickLinks": "Show quick links",
   "plugins.links.sortBy": "Sort links by",
   "plugins.links.sortBy.icon": "Icon type",

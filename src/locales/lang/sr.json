@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Links open in a new tab",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "Притисните број {number} или кликните да би сте посетили страницу",
+  "plugins.links.shortcutHint": "Притисните број {key} или кликните да би сте посетили страницу",
   "plugins.links.showQuickLinks": "Show quick links",
   "plugins.links.sortBy": "Sort links by",
   "plugins.links.sortBy.icon": "Icon type",

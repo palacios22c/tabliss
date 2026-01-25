@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Links öffnen sich in einem neuen Tab",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "Zum Öffnen {number} drücken oder klicken",
+  "plugins.links.shortcutHint": "Zum Öffnen {key} drücken oder klicken",
   "plugins.links.showQuickLinks": "Schnelllinks anzeigen",
   "plugins.links.sortBy": "Links sortieren nach",
   "plugins.links.sortBy.icon": "Symboltyp",

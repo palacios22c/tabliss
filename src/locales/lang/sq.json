@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Hap link-et në një tab të ri",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "Shtyp {number} ose kliko për të hapur",
+  "plugins.links.shortcutHint": "Shtyp {key} ose kliko për të hapur",
   "plugins.links.showQuickLinks": "Show quick links",
   "plugins.links.sortBy": "Rendit sipas",
   "plugins.links.sortBy.icon": "Lloji i ikonës",

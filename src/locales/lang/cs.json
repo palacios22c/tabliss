@@ -250,7 +250,7 @@
   "plugins.links.openInANewTab": "Odkazy se otevírají v novém panelu",
   "plugins.links.requestPermission": "Request Permission",
   "plugins.links.selectFolder": "Select folder",
-  "plugins.links.shortcutHint": "Stiskněte {number} nebo klikněte pro navštívení",
+  "plugins.links.shortcutHint": "Stiskněte {key} nebo klikněte pro navštívení",
   "plugins.links.showQuickLinks": "Show quick links",
   "plugins.links.sortBy": "Řadit odkazy podle",
   "plugins.links.sortBy.icon": "Typ ikony",
