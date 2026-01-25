@@ -94,7 +94,7 @@ const GiphySettings: FC<Props> = ({ data = defaultData, setData }) => {
         />{" "}
         <FormattedMessage
           id="backgrounds.giphy.nsfw"
-          defaultMessage="Allow NSFW content"
+          defaultMessage="Include NSFW content"
           description="Label for Giphy NSFW toggle"
         />
       </label>
