@@ -13,7 +13,7 @@
 1. **Go to the [Releases page](https://github.com/BookCatKid/TablissNG/releases)** of the repository
 2. Find the latest release. For the absolute latest development builds, prefer the Nightly release (tag `nightly-auto`). If you need stability, use the latest stable release instead.
 3. Download the appropriate file: (for Nightly builds, the filenames will include `-nightly` or `tablissng-X.X.X.X.xpi` for Firefox)
-   - For Firefox (Nightly): `tablissng-1.6.1.1.xpi`
+   - For Firefox (Nightly): `tablissng-1.6.1.2.xpi`
    - For Firefox (Stable): `tabliss-firefox-signed.xpi` (This file may not exist)
    - For Chrome/Chromium: `tabliss-chromium.zip`
    - For Firefox (unsigned version): `tabliss-firefox.zip` (expert)
@@ -58,7 +58,6 @@ For now the only way to install the safari extension is to install developer mod
 4. Select the folder you unzipped. (make sure it has manifest.json in the root)
 5. You should be brought to the `Extensions` tab and now click on the checkbox next to extension to enable it.
 6. Click `Use for new windows and tabs` to allow TablissNG to overide your new tab page. (If its not working select TablissNG for the two `New * open with` options)
-
 
 ## Notes
 
