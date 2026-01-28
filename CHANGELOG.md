@@ -6,6 +6,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 I also attempt to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
+## [1.6.2] - 1/28/2026 | Better positioning, unified backgrounds, Giphy modernization, and signed firefox nightly builds
+
+A major update to the positioning system and internal background structure, along with modernization of the Giphy plugin, signed Firefox nightly/beta builds, and several important bug fixes.
+
+### Added
+
+- feat(positioning): switch to react-movable and enhance moveable system (#93). [b30a753f](https://github.com/BookCatKid/TablissNG/commit/b30a753f)
+
+- feat: show widget config in unknown widget. [53706bd1](https://github.com/BookCatKid/TablissNG/commit/53706bd1)
+
+- feat(giphy): modernize giphy background plugin. [3de6e521](https://github.com/BookCatKid/TablissNG/commit/3de6e521)
+
+- feat(Backgrounds): unify backgrounds to BaseBackgrounds (#91). [ee152a45](https://github.com/BookCatKid/TablissNG/commit/ee152a45)
+
+- ci: signed firefox nightly/beta builds. [0b1d6ec64691151c2015dd0faa71fa74a3df8a18](https://github.com/BookCatKid/TablissNG/commit/0b1d6ec64691151c2015dd0faa71fa74a3df8a18)
+
+### Fixed
+
+- fix: handle empty URL string in unsplash buildLink function. [516dabb7](https://github.com/BookCatKid/TablissNG/commit/516dabb7)
+
+- fix(translations): incorrect parameter for shortcut key. [329ac9f3](https://github.com/BookCatKid/TablissNG/commit/329ac9f3)
+
+- fix(useCache): URGENT fix cache refetching infinitely. [b1d2cae8](https://github.com/BookCatKid/TablissNG/commit/b1d2cae8)
+
+### Changed
+
+- Update Spanish translation (#95). [807770b4](https://github.com/BookCatKid/TablissNG/commit/807770b4)
+
+### Chore / Cleanup
+
+- chore: run prettier and cleanup. [0f691c0c](https://github.com/BookCatKid/TablissNG/commit/0f691c0c), [f1169338](https://github.com/BookCatKid/TablissNG/commit/f1169338), [ac73f35a](https://github.com/BookCatKid/TablissNG/commit/ac73f35a)
+
+- chore: run translations. [60327620](https://github.com/BookCatKid/TablissNG/commit/60327620)
+
+- chore: fix node definitions and eslint. [19a195f2](https://github.com/BookCatKid/TablissNG/commit/19a195f2)
+
 ## [1.6.1] - 1/15/2026 | New logos, better caching, a Trello widget, Bing wallpapers and more!
 
 Finally changed the logo to something different from Tabliss's logo! This release includes a lot of community contributions, so thanks a ton to everyone who helped out!
