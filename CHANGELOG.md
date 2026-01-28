@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 I also attempt to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
-## [1.6.2] - 1/28/2026 | Better positioning, unified backgrounds, Giphy modernization, and signed firefox nightly builds
+## [1.6.2] - 1/28/2026 | Better positioning, unified (and improved) backgrounds, Giphy modernization, and signed firefox nightly builds
 
 A major update to the positioning system and internal background structure, along with modernization of the Giphy plugin, signed Firefox nightly/beta builds, and several important bug fixes.
 
@@ -20,7 +20,7 @@ A major update to the positioning system and internal background structure, alon
 
 - feat(Backgrounds): unify backgrounds to BaseBackgrounds (#91). [ee152a45](https://github.com/BookCatKid/TablissNG/commit/ee152a45)
 
-- ci: signed firefox nightly/beta builds. [0b1d6ec64691151c2015dd0faa71fa74a3df8a18](https://github.com/BookCatKid/TablissNG/commit/0b1d6ec64691151c2015dd0faa71fa74a3df8a18)
+- ci: signed firefox nightly/beta builds. [0b1d6ec64](https://github.com/BookCatKid/TablissNG/commit/0b1d6ec64)
 
 ### Fixed
 
