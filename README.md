@@ -55,7 +55,7 @@ This list is by no means exhaustive. TablissNG includes many other tweaks, quali
 - Widgets
   - Time Tracker, Bitcoin Mempool, Top Sites, Binary Clock, Bookmarks, Custom HTML.
   - Enhancements: Daily Routine for Todos, Bible verses in Quotes, Markdown in Notes
-  - "Free Move" mode for dragging widgets (very beta, but functional)
+  - "Free Move" mode for dragging widgets (Now out of beta 🎉)
 
 - Backgrounds & Visuals
   - Wikimedia Image of the Day, NASA APOD
@@ -76,7 +76,7 @@ The extension is available in the [Firefox Add-ons Store](https://addons.mozilla
 
 **Nightly Builds (Firefox):**
 
-- **Nightly** (v1.6.1.2): [Install Nightly](https://github.com/BookCatKid/TablissNG/releases/download/nightly-auto/tablissng-1.6.1.2.xpi)
+- **Nightly** (v1.6.1.3): [Install Nightly](https://github.com/BookCatKid/TablissNG/releases/download/nightly-auto/tablissng-1.6.1.3.xpi)
 
 If you want to install the extension manually, or want nightly builds, see [INSTALL.md](INSTALL.md).
 
