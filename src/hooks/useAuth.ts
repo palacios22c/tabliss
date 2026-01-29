@@ -3,6 +3,9 @@ import { Session } from "../plugins/shared/types/Session";
 import { StoreApi, UseBoundStore } from "zustand";
 import { AuthState } from "../plugins/shared/interfaces/AuthState";
 
+// Typedef for a Zustand store type definition
+type Store<T> = UseBoundStore<StoreApi<T>>;
+
 /**
  * Hook for reading and setting authentication state in widgets. Encapsulates client functions for signing in and out
  * Requires a zustand store to maintain authentication state for different widgets
@@ -14,7 +17,7 @@ import { AuthState } from "../plugins/shared/interfaces/AuthState";
  */
 export default function useAuth<T extends Session>(
   sessionName: string,
-  store: UseBoundStore<StoreApi<AuthState>>,
+  store: Store<AuthState>,
 ) {
   const { status: authStatus, setStatus: setAuthStatus } = store();
   const [authError, setAuthError] = useState<string | null>("");
@@ -33,7 +36,6 @@ export default function useAuth<T extends Session>(
   const checkAuth = async () => {
     try {
       const token = await getSession();
-      console.log("TOKEN ", token);
       if (!token) {
         return false;
       }
@@ -64,6 +66,11 @@ export default function useAuth<T extends Session>(
     }
   }, []);
 
+  /**
+   * Attempts to authenticate user via an authentication method
+   * Saves resulting session in local storage and adjusts state
+   * @param authFlow
+   */
   const signIn = async (authFlow: () => Promise<T | null>) => {
     console.log("Authenticating");
     setAuthStatus("pending");
@@ -81,12 +88,25 @@ export default function useAuth<T extends Session>(
     }
   };
 
-  const signOut = async () => {
+  /**
+   * Clears session token and runs optional callback onSignOut for side effects
+   * @param onSignOut
+   */
+  const signOut = async (onSignOut?: (session: T) => Promise<void>) => {
     console.log("TRELLO: Signing out goodbye :)");
     setAuthStatus("pending");
     setAuthError("");
+    const session = await getSession();
     await browser.storage.local.remove(sessionName);
-    setAuthStatus("unauthenticated");
+    try {
+      if (onSignOut && session) {
+        await onSignOut(session);
+      }
+    } catch (error) {
+      console.error("TRELLO: Failed to run onSignOut");
+    } finally {
+      setAuthStatus("unauthenticated");
+    }
   };
 
   return { authStatus, authError, getSession, signIn, signOut };

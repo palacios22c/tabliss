@@ -14,10 +14,10 @@ import { Board, List } from "./types";
 import ListCheckbox from "./ui/ListCheckbox/ListCheckbox";
 import { Spinner } from "../../shared";
 import useAuth from "../../../hooks/useAuth";
-import { useTrelloAuthStore } from "./stores/useTrelloAuthStore";
+import { trelloAuthStore } from "./stores/trelloAuthStore";
 import useBoards from "./hooks/useBoards";
 import useLists from "./hooks/useLists";
-import { trelloAuthFlow } from "./utils/auth";
+import { trelloAuthFlow, onTrelloSignOut } from "./utils/auth";
 
 const TrelloSettings: FC<Props> = ({
   data = defaultData,
@@ -25,14 +25,15 @@ const TrelloSettings: FC<Props> = ({
   cache = defaultCache,
   setCache,
 }) => {
-  const MAX_LISTS = 6; // maximum lists a user can select
   const {
     authStatus: authState,
     authError,
     signIn,
     signOut,
-  } = useAuth<TrelloSession>("trello", useTrelloAuthStore);
+  } = useAuth<TrelloSession>("trello", trelloAuthStore);
+
   const { boards, isLoading: boardsLoading } = useBoards(data, setData);
+
   const {
     lists,
     setLists,
@@ -40,6 +41,7 @@ const TrelloSettings: FC<Props> = ({
     updateUI,
     updateUIWithSkeletons,
   } = useLists(data, cache, setCache);
+
   const pendingJobsRef = useRef<Set<FetchJob>>(new Set<FetchJob>());
   const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const DEBOUNCE_INTERVAL = 525;
@@ -49,18 +51,13 @@ const TrelloSettings: FC<Props> = ({
   };
 
   const onSignout = async () => {
-    await signOut();
+    await signOut(onTrelloSignOut);
     setCache(defaultCache);
   };
 
   const onBoardSelect = (event: ChangeEvent<HTMLSelectElement>) => {
     setData({ ...data, selectedID: event.target.value });
-    // reset all cache except auth state
-    setCache({
-      ...cache,
-      order: [],
-      responses: new Map<string, FetchJob>(),
-    });
+    setCache(defaultCache);
   };
 
   const onListCheckboxSelect = (listID: string) => {
@@ -69,14 +66,12 @@ const TrelloSettings: FC<Props> = ({
       return;
     }
 
-    const updatedListCount = lists.filter((l) => l.watch).length;
     const action: "ADD" | "REMOVE" = found.watch ? "REMOVE" : "ADD";
     if (action === "REMOVE") {
       pendingJobsRef.current.forEach(
         (job) => job.listId === listID && pendingJobsRef.current.delete(job),
       );
     } else {
-      if (updatedListCount + 1 > MAX_LISTS) return;
       pendingJobsRef.current.add(createFetchJob(listID));
     }
 
@@ -91,6 +86,7 @@ const TrelloSettings: FC<Props> = ({
       boardId: data.selectedID!,
       lists: selectedLists,
     };
+
     const updated = {
       ...data.preferences,
       [data.selectedID!]: newPreference,
@@ -110,7 +106,7 @@ const TrelloSettings: FC<Props> = ({
     }
 
     debounceTimeoutRef.current = setTimeout(() => {
-      // update the UI and set the skeleton jobs to actual jobs and new selections
+      // update the UI and set the skeleton jobs to actual jobs and newest selections
       updateUI(listID, selectedLists, pendingJobsRef.current, action);
       pendingJobsRef.current.clear();
     }, DEBOUNCE_INTERVAL);
@@ -152,8 +148,8 @@ const TrelloSettings: FC<Props> = ({
       <label>
         <FormattedMessage
           id="plugins.trello.boardSelect"
-          defaultMessage="Select your board"
-          description="Select your board"
+          defaultMessage="Select board"
+          description="Select board"
         />
         <div>
           {boardsLoading ? (
@@ -182,8 +178,8 @@ const TrelloSettings: FC<Props> = ({
         <label>
           <FormattedMessage
             id="plugins.trello.listSelect"
-            defaultMessage={"Select up to 6 lists to watch"}
-            description={`Select up to ${MAX_LISTS} lists to watch`}
+            defaultMessage={"Select lists"}
+            description={`Select lists`}
           />
           <div className="list-select-container">
             {listsLoading || boardsLoading ? (
