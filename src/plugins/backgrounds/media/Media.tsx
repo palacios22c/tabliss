@@ -47,6 +47,9 @@ const Media: React.FC<Props> = ({
 
   const isVideo = file.type.match(/^video\/(mp4|webm|ogg)$/);
 
+  // Only show controls if there's more than one item to navigate through
+  const showControls = normalizedCache.items?.length > 1;
+
   return (
     <BaseBackground
       containerClassName="Image fullscreen"
@@ -55,6 +58,7 @@ const Media: React.FC<Props> = ({
       onPause={handlePause}
       onPrev={go(-1)}
       onNext={go(1)}
+      showControls={showControls}
     >
       {isVideo && (
         <video
