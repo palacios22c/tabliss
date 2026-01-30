@@ -148,7 +148,7 @@ if (!isWeb) {
   );
 }
 
-if (isProduction) {
+if (isProduction && buildTarget !== "firefox") {
   config.plugins.push(
     new workbox.GenerateSW({
       exclude: [/.*/], // Disable precaching
