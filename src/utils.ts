@@ -8,6 +8,17 @@ export const capitalize = (string: string) => {
   return string[0].toUpperCase() + string.slice(1).toLowerCase();
 };
 
+/**
+ * Parse an ISO date string (YYYY-MM-DD) in local timezone
+ * Avoids the UTC conversion that happens with new Date("YYYY-MM-DD")
+ * @param dateString ISO date string in format YYYY-MM-DD
+ * @returns Date object in local timezone
+ */
+export const parseLocalDate = (dateString: string): Date => {
+  const [year, month, day] = dateString.split("-").map(Number);
+  return new Date(year, month - 1, day);
+};
+
 export const formatBytes = (
   bytes: number,
   options?: { decimals?: number; binary?: boolean },
