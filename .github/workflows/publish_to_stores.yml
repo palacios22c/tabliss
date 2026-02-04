@@ -162,6 +162,46 @@ jobs:
           VERSION=${REF#v}
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "ref=$REF" >> $GITHUB_OUTPUT
+      - name: Get previous release date and closed issues
+        id: closed_issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get the date of the previous release
+          PREV_RELEASE_DATE=$(gh release list --limit 2 --order desc --json createdAt,tagName -q '.[1].createdAt // empty')
+
+          if [ -n "$PREV_RELEASE_DATE" ]; then
+            echo "Previous release date: $PREV_RELEASE_DATE"
+
+            # Get all issues closed since the previous release
+            CLOSED_ISSUES=$(gh issue list \
+              --state closed \
+              --limit 1000 \
+              --search "closed:>$PREV_RELEASE_DATE" \
+              --json number,title,closedAt \
+              --jq '.[] | "- #\(.number) \(.title)"')
+
+            if [ -n "$CLOSED_ISSUES" ]; then
+              echo "Found closed issues:"
+              echo "$CLOSED_ISSUES"
+
+              # Write to output using heredoc for multiline
+              {
+                echo 'body<<EOF'
+                echo '## Closed Issues'
+                echo ''
+                echo "$CLOSED_ISSUES"
+                echo ''
+                echo 'EOF'
+              } >> "$GITHUB_OUTPUT"
+            else
+              echo "No closed issues found since previous release"
+              echo "body=" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "No previous release found"
+            echo "body=" >> "$GITHUB_OUTPUT"
+          fi
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -169,6 +209,7 @@ jobs:
         with:
           name: Version ${{ steps.version.outputs.version }}
           tag_name: ${{ steps.version.outputs.ref }}
+          body: ${{ steps.closed_issues.outputs.body }}
           files: |
             tabliss-firefox.zip
             tabliss-chromium.zip
