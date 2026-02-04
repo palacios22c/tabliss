@@ -244,6 +244,8 @@
   "plugins.links.input.uploadCustomIcon": "Enviar Ícone Personalizado",
   "plugins.links.input.uploadIcon": "Enviar Ícone",
   "plugins.links.input.url": "URL",
+  "plugins.links.input.useExtensionTabs": "Use browser extension API to open link",
+  "plugins.links.input.useExtensionTabsHelp": "When enabled, links open through the browser extension API instead of the default browser behavior. Useful for restricted URLs like file://, about:, or browser settings. Some URLs will always open through the extension API regardless of this setting.",
   "plugins.links.input.websiteIcons": "Ícones de Sites",
   "plugins.links.name": "Links Rápidos",
   "plugins.links.numberOfColumns": "Número de colunas",

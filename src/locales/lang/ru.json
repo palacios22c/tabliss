@@ -244,6 +244,8 @@
   "plugins.links.input.uploadCustomIcon": "Загрузить свою иконку",
   "plugins.links.input.uploadIcon": "Загрузить иконку",
   "plugins.links.input.url": "URL",
+  "plugins.links.input.useExtensionTabs": "Use browser extension API to open link",
+  "plugins.links.input.useExtensionTabsHelp": "When enabled, links open through the browser extension API instead of the default browser behavior. Useful for restricted URLs like file://, about:, or browser settings. Some URLs will always open through the extension API regardless of this setting.",
   "plugins.links.input.websiteIcons": "Иконка веб-сайта",
   "plugins.links.name": "Быстрые ссылки",
   "plugins.links.numberOfColumns": "Количество столбцов",
