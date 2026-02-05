@@ -6,6 +6,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 I also attempt to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
+## [1.6.3] - 2/5/2026 | Bugfixes and minor improvements
+
+Very small release with a few fixes and minor improvements.
+
+### Added
+
+- feat(release): add closed issues summary to release body. [d9c56024](https://github.com/BookCatKid/TablissNG/commit/d9c56024)
+
+- feat(links): add URL normalization and extension tab option. [bd53b7ab](https://github.com/BookCatKid/TablissNG/commit/bd53b7ab)
+
+- feat(media): hide controls with 1 or less images. [8d92f1aa](https://github.com/BookCatKid/TablissNG/commit/8d92f1aa)
+
+### Fixed
+
+- fix: translations. [3434f6c0](https://github.com/BookCatKid/TablissNG/commit/3434f6c0)
+
+- fix(dates): date parsing causing incorrect days. [40d6c942](https://github.com/BookCatKid/TablissNG/commit/40d6c942)
+
+- fix(bookmarks): properly set iconSize to 24 by default. [378fdc72](https://github.com/BookCatKid/TablissNG/commit/378fdc72)
+
+- fix: don't include unused service-worker on firefox. [505525ac](https://github.com/BookCatKid/TablissNG/commit/505525ac)
+
+- fix(trello): minor fixes (#97). [4ccd112d](https://github.com/BookCatKid/TablissNG/commit/4ccd112d)
+
 ## [1.6.2] - 1/28/2026 | Better positioning, unified (and improved) backgrounds, Giphy modernization, and signed firefox nightly builds
 
 A major update to the positioning system and internal background structure, along with modernization of the Giphy plugin, signed Firefox nightly/beta builds, and several important bug fixes.
