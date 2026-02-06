@@ -1,6 +1,9 @@
 import { format } from "date-fns";
 import React, { FC } from "react";
+import { FormattedMessage } from "react-intl";
 import { parseLocalDate } from "../../../utils";
+import { pluginMessages } from "../../../locales/messages";
+import { messages as timeTrackerMessages } from "../timeTracker/index";
 import { defaultData, Props } from "./types";
 
 function formatDate(time: number): string {
@@ -16,7 +19,14 @@ function buildDateObject(time: number, timeStr: string): Date {
 }
 
 const SinceSettings: FC<Props> = ({ data = defaultData, setData }) => (
-  <div className="CssSettings">
+  <div className="SinceSettings">
+    <FormattedMessage
+      {...pluginMessages.deprecationWarning}
+      values={{
+        widget: <FormattedMessage {...timeTrackerMessages.name} />,
+      }}
+    />
+
     <label>
       What
       <input

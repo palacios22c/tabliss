@@ -124,6 +124,7 @@
   "plugins.customText.separator": "Separador",
   "plugins.customText.showNewText": "Mostrar un nuevo texto",
   "plugins.customText.text": "Texto",
+  "plugins.deprecationWarning": "This widget is outdated. Please use the {widget} widget instead.",
   "plugins.every15min": "Cada 15 minutos",
   "plugins.every5min": "Cada 5 minutos",
   "plugins.everyDay": "Cada día",

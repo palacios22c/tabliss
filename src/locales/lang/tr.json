@@ -124,6 +124,7 @@
   "plugins.customText.separator": "Ayırıcı",
   "plugins.customText.showNewText": "Yeni bir metin göster",
   "plugins.customText.text": "Metin",
+  "plugins.deprecationWarning": "This widget is outdated. Please use the {widget} widget instead.",
   "plugins.every15min": "Her 15 dakikada bir",
   "plugins.every5min": "Her 5 dakikada bir",
   "plugins.everyDay": "Her gün",
