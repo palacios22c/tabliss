@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { engines } from "./engines";
-import { Props, defaultData, SEARCH_ENGINE_CUSTOM } from "./types";
+import { Props, defaultData, SEARCH_ENGINE_CUSTOM, SearchStyle } from "./types";
 import { messages } from "./Search";
 
 const SearchSettings: FC<Props> = ({ data = defaultData, setData }) => {
@@ -92,6 +92,42 @@ const SearchSettings: FC<Props> = ({ data = defaultData, setData }) => {
             })
           }
         />
+      </label>
+
+      <label>
+        <FormattedMessage
+          id="plugins.search.style"
+          defaultMessage="Search Style"
+          description="Search Style title"
+        />
+        <select
+          onChange={(event) =>
+            setData({ ...data, style: event.target.value as SearchStyle })
+          }
+          value={data.style ?? "default"}
+        >
+          <option value="default">
+            <FormattedMessage
+              id="plugins.search.style.default"
+              defaultMessage="Default"
+              description="Label for the default search style"
+            />
+          </option>
+          <option value="transparent-rounded">
+            <FormattedMessage
+              id="plugins.search.style.transparentRounded"
+              defaultMessage="Transparent Rounded"
+              description="Label for the transparent rounded search style"
+            />
+          </option>
+          <option value="minimal-outlined">
+            <FormattedMessage
+              id="plugins.search.style.minimalOutlined"
+              defaultMessage="Minimal Outlined"
+              description="Label for the minimal outlined search style"
+            />
+          </option>
+        </select>
       </label>
 
       <label>

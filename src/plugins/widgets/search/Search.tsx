@@ -1,5 +1,6 @@
 import React, { FC, useRef, useState } from "react";
 import { defineMessages, useIntl } from "react-intl";
+import { Icon } from "@iconify/react";
 import { useKeyPress } from "../../../hooks";
 import {
   getSuggestions,
@@ -133,7 +134,10 @@ const Search: FC<Props> = ({ data = defaultData }) => {
   };
 
   return (
-    <form className="Search" onSubmit={handleSubmit}>
+    <form
+      className={`Search ${data.style ? `style-${data.style}` : ""}`}
+      onSubmit={handleSubmit}
+    >
       <input
         autoFocus
         defaultValue=""
@@ -144,6 +148,12 @@ const Search: FC<Props> = ({ data = defaultData }) => {
         onChange={handleChange}
         onKeyUp={handleKeyUp}
       />
+      {(data.style === "transparent-rounded" ||
+        data.style === "minimal-outlined") && (
+        <button className="search-submit" type="submit">
+          <Icon icon="feather:search" />
+        </button>
+      )}
 
       {suggestions && (
         <Suggestions
