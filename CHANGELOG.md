@@ -162,7 +162,7 @@ Finally changed the logo to something different from Tabliss's logo! This releas
 
 - fix(QuickLinks): text underline not appearing. [b2f8883](https://github.com/BookCatKid/TablissNG/commit/b2f8883)
 
-- fix: replace {{}} with [] for github-calendar translations. [0bf9d9e](https://github.com/BookCatKid/TablissNG/commit/0bf9d9e)
+- fix: replace `{{}}` with `[]` for github-calendar translations. [0bf9d9e](https://github.com/BookCatKid/TablissNG/commit/0bf9d9e)
 
 - fix: remove drop-shadow from github-calendar. [aa6fd7e](https://github.com/BookCatKid/TablissNG/commit/aa6fd7e)
 

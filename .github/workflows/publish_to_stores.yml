@@ -79,10 +79,16 @@ jobs:
             --source-dir=dist/firefox \
             --api-key=${{ secrets.AMO_ISSUER }} \
             --api-secret=${{ secrets.AMO_SECRET }} \
-            --channel=listed
+            --channel=listed \
+            --artifacts-dir=dist/signed-firefox
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_SECRET }}
+      - name: Upload Signed XPI Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tabliss-firefox-signed
+          path: dist/signed-firefox/*.xpi
 
   upload-chrome-store:
     needs: [build]
@@ -131,7 +137,7 @@ jobs:
           product_id: ${{ secrets.EDGE_PRODUCT_ID }}
 
   create-release:
-    needs: [build]
+    needs: [build, upload-firefox-store]
     if: ${{ !inputs.skip_github_release }}
     name: Create GitHub Release
     runs-on: ubuntu-latest
@@ -155,6 +161,10 @@ jobs:
           cd ../tabliss-safari
           zip -r ../../tabliss-safari.zip ./*
           cd ../..
+      - name: Prepare Signed Firefox XPI
+        run: |
+          XPI_FILE=$(find artifacts/tabliss-firefox-signed -name "*.xpi" | head -n 1)
+          cp "$XPI_FILE" tabliss-firefox.xpi
       - name: Get version without v prefix
         id: version
         run: |
@@ -212,6 +222,7 @@ jobs:
           body: ${{ steps.closed_issues.outputs.body }}
           files: |
             tabliss-firefox.zip
+            tabliss-firefox.xpi
             tabliss-chromium.zip
             tabliss-web.zip
             tabliss-safari.zip

@@ -22,6 +22,7 @@ export default defineConfig(
       "jest.config.json",
       "scripts/**/*.js",
       "eslint.config.mjs",
+      "docs/sync-assets.js",
     ],
     languageOptions: {
       globals: {

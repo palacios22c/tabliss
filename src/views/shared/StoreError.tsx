@@ -31,7 +31,7 @@ const StoreError: React.FC<Props> = ({ onClose }) => {
             defaultMessage="If they do not return, the {supportGuideLink} covers the common causes and how to resolve them. Otherwise, create an issue at {githubLink} if you are still unable to solve the issue."
             values={{
               supportGuideLink: (
-                <a href="https://tabliss.io/support.html">
+                <a href="https://bookcatkid.github.io/TablissNG/docs/support/storage-errors">
                   <FormattedMessage
                     id="plugins.storageError.guide"
                     defaultMessage="support guide"
