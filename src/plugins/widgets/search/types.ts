@@ -13,6 +13,8 @@ type Data = {
   placeholderText?: string;
   keyBind?: string;
   style?: SearchStyle;
+  overrideWidth?: boolean;
+  customWidth?: number;
 };
 
 export type Props = API<Data>;

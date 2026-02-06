@@ -146,6 +146,41 @@ const SearchSettings: FC<Props> = ({ data = defaultData, setData }) => {
         />
       </label>
 
+      <label className="checkbox">
+        <input
+          type="checkbox"
+          checked={data.overrideWidth}
+          onChange={(event) =>
+            setData({ ...data, overrideWidth: event.target.checked })
+          }
+        />
+        <FormattedMessage
+          id="plugins.search.overrideWidth"
+          defaultMessage="Override search bar width"
+          description="Checkbox label to override search bar width"
+        />
+      </label>
+
+      {data.overrideWidth && (
+        <label>
+          <FormattedMessage
+            id="plugins.search.customWidth"
+            defaultMessage="Custom Width (px)"
+            description="Input label for custom search bar width"
+          />
+          <input
+            type="number"
+            value={data.customWidth ?? 400}
+            onChange={(event) =>
+              setData({
+                ...data,
+                customWidth: Number(event.target.value),
+              })
+            }
+          />
+        </label>
+      )}
+
       <label>
         <FormattedMessage
           id="plugins.search.suggestionsProvider"
@@ -190,8 +225,8 @@ const SearchSettings: FC<Props> = ({ data = defaultData, setData }) => {
           />
           <input
             type="number"
-            min="1"
-            max="10"
+            min={1}
+            max={10}
             value={data.suggestionsQuantity}
             onChange={(event) =>
               setData({

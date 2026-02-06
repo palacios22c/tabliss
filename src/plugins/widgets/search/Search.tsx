@@ -136,6 +136,9 @@ const Search: FC<Props> = ({ data = defaultData }) => {
   return (
     <form
       className={`Search ${data.style ? `style-${data.style}` : ""}`}
+      style={{
+        width: data.overrideWidth ? `${data.customWidth || 400}px` : undefined,
+      }}
       onSubmit={handleSubmit}
     >
       <input
