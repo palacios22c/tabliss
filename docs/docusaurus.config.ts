@@ -56,11 +56,12 @@ const config: Config = {
         },
         blog: false,
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: "./src/css/custom.sass",
         },
       } satisfies Preset.Options,
     ],
   ],
+  plugins: ["docusaurus-plugin-sass"],
 
   themeConfig: {
     navbar: {

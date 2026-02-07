@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import styles from "./index.module.css";
+import styles from "./index.module.sass";
 
 export default function Gallery(): ReactNode {
   const screenshots = [

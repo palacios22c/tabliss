@@ -8,7 +8,7 @@ import DownloadButtons from "@site/src/components/DownloadButtons";
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import styles from "./index.module.css";
+import styles from "./index.module.sass";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
