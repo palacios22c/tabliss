@@ -38,12 +38,8 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "eslint --fix"
-    ],
-    "**/*.{md,mdx,ts,tsx,json}": [
-      "prettier --write"
-    ]
+    "**/*.{ts,tsx}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
