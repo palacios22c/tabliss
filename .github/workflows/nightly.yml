@@ -10,7 +10,7 @@ jobs:
   build:
     uses: ./.github/workflows/_build.yml
     with:
-      artifact_suffix: '-nightly'
+      artifact_suffix: "-nightly"
     secrets: inherit
 
   release:

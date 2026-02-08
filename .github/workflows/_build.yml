@@ -4,15 +4,15 @@ on:
   workflow_call:
     inputs:
       ref:
-        description: 'Git ref to build from'
+        description: "Git ref to build from"
         required: false
         type: string
-        default: ''
+        default: ""
       artifact_suffix:
-        description: 'Suffix to add to the artifact name'
+        description: "Suffix to add to the artifact name"
         required: false
         type: string
-        default: ''
+        default: ""
 
 jobs:
   build:
