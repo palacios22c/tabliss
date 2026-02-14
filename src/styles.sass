@@ -1,7 +1,7 @@
 :root
-    --color-primary: #3498db
-    --color-primary-hover: #2980b9
-    --color-primary-active: #1c638e
+    --accent-color: #3498db
+    --accent-color-hover: color-mix(in srgb, var(--accent-color), black 10%)
+    --accent-color-active: color-mix(in srgb, var(--accent-color), black 20%)
 
     --bg-main: #ffffff
     --bg-secondary: #f5f7f8
@@ -73,7 +73,7 @@ html, body
     color: var(--text-main)
 
 a
-    color: var(--color-primary)
+    color: var(--accent-color)
     cursor: pointer
     text-decoration: none
 
@@ -143,11 +143,11 @@ textarea
         background-color: var(--border-main) !important
 
     &.button--primary
-        background-color: var(--color-primary) !important
+        background-color: var(--accent-color) !important
         color: var(--text-on-primary)
 
         &:hover
-            background-color: var(--color-primary-hover) !important
+            background-color: var(--accent-color-hover, var(--accent-color)) !important
 
 .button
     border: 0
@@ -166,11 +166,11 @@ textarea
         cursor: default
 
     &--primary
-        background-color: var(--color-primary)
+        background-color: var(--accent-color)
         &:hover
-            background: var(--color-primary-hover)
+            background: var(--accent-color-hover, var(--accent-color))
         &:active
-            background: var(--color-primary-active)
+            background: var(--accent-color-active, var(--accent-color))
 
     &--secondary
         background: var(--text-muted)

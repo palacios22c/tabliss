@@ -128,7 +128,7 @@ const UnsplashSettings: React.FC<Props> = ({ data = defaultData, setData }) => {
                     <span
                       key={item.value}
                       style={{
-                        background: "var(--color-primary)",
+                        background: "var(--accent-color)",
                         color: "var(--text-on-primary)",
                         padding: "2px 8px",
                         borderRadius: "1em",

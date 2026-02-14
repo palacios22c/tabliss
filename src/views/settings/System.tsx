@@ -47,6 +47,7 @@ const System: React.FC = () => {
     "autoHideSettings",
   );
   const [favicon, setFavicon] = useKey(db, "favicon");
+  const [accent, setAccent] = useKey(db, "accent");
   const systemIsDark = useSystemTheme();
 
   function setHighlighting(checked: boolean) {
@@ -278,6 +279,35 @@ const System: React.FC = () => {
             />
           </option>
         </select>
+      </label>
+
+      <label className="u-grid-2col-wide">
+        <span>
+          <FormattedMessage
+            id="settings.accentColor"
+            defaultMessage="Accent Color"
+            description="Global accent color picker label"
+          />
+        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <input
+            type="color"
+            value={accent}
+            onChange={(e) => setAccent(e.target.value)}
+          />
+          <button
+            type="button"
+            className="button button--primary"
+            style={{ fontSize: "0.85em" }}
+            onClick={() => setAccent("#3498db")}
+          >
+            <FormattedMessage
+              id="settings.accentColor.reset"
+              defaultMessage="Reset"
+              description="Reset accent color to default"
+            />
+          </button>
+        </div>
       </label>
 
       <label className="u-grid-2col-wide">
