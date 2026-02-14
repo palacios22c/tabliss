@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 22
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: tabliss-firefox
           path: dist/firefox
@@ -66,7 +66,7 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.AMO_SECRET }}
 
       - name: Upload Signed XPI Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: tabliss-firefox-signed
           path: dist/signed-firefox/*.xpi
@@ -77,7 +77,7 @@ jobs:
     name: Upload extension to Chrome Web Store
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: tabliss-chromium
           path: dist/chromium
@@ -102,7 +102,7 @@ jobs:
     name: Upload extension to Edge Store
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: tabliss-chromium
           path: dist/chromium
@@ -140,7 +140,7 @@ jobs:
           ref: ${{ inputs.ref }}
           fetch-depth: 0
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           path: artifacts
 
@@ -216,7 +216,7 @@ jobs:
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2.5.0
         with:
           name: Version ${{ steps.version.outputs.version }}
           tag_name: ${{ steps.version.outputs.ref }}
