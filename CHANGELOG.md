@@ -6,6 +6,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 I also attempt to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
+## [1.6.4] - 2/13/2026 | Theming, search customization, tally counter, and online documentation
+
+A feature-packed release with centralized theming via CSS variables, search widget customization, a new tally counter widget, and full online documentation! Additionally, the since and countdown widgets are now deprecated in favor of TimeTracker, and a lot of development work has been done under the hood to prepare for future updates and make contributions easier.
+
+### Added
+
+- feat(ui): add customizable global accent color. [b8ffd6fb](https://github.com/BookCatKid/TablissNG/commit/b8ffd6fb)
+
+- feat(time): indent settings and add showHours. [e08dcb35](https://github.com/BookCatKid/TablissNG/commit/e08dcb35)
+
+- feat: add tally counter widget. [5a79bf13](https://github.com/BookCatKid/TablissNG/commit/5a79bf13)
+
+- feat(search): add custom width settings. [cb8aa009](https://github.com/BookCatKid/TablissNG/commit/cb8aa009)
+
+- feat(search): add style customization to search widget. [48b0706e](https://github.com/BookCatKid/TablissNG/commit/48b0706e)
+
+- feat(docs): add full online documentation! (#98). [b4570ef7](https://github.com/BookCatKid/TablissNG/commit/b4570ef7)
+
+### Changed
+
+- refactor: implement centralized CSS variables for theming (#109). [d170e10f](https://github.com/BookCatKid/TablissNG/commit/d170e10f)
+
+- change: expand the default rows for custom css/js/html widgets. [e289d4ea](https://github.com/BookCatKid/TablissNG/commit/e289d4ea)
+
+- feat: add deprecation warning to since and countdown widgets. [a52d6e65](https://github.com/BookCatKid/TablissNG/commit/a52d6e65)
+
+- Updated ES & IT files (#108). [c2c80b6b](https://github.com/BookCatKid/TablissNG/commit/c2c80b6b)
+
+### Fixed
+
+- fix: visible instead of auto (oops...). [62e87b4d](https://github.com/BookCatKid/TablissNG/commit/62e87b4d)
+
+### Chore / Cleanup
+
+- chore: improve lint-staged configuration. [1743f601](https://github.com/BookCatKid/TablissNG/commit/1743f601)
+
+- ci: refactor workflows to use reusable templates. [8f81b721](https://github.com/BookCatKid/TablissNG/commit/8f81b721)
+
+- build: remove service worker from manifest in dev. [41e6e6e2](https://github.com/BookCatKid/TablissNG/commit/41e6e6e2)
+
+- chore: migrate some project styles from CSS to SASS. [4fa02de2](https://github.com/BookCatKid/TablissNG/commit/4fa02de2)
+
+- chore: deps. [e3269c8f](https://github.com/BookCatKid/TablissNG/commit/e3269c8f)
+
 ## [1.6.3] - 2/5/2026 | Bugfixes and minor improvements
 
 Very small release with a few fixes and minor improvements.
