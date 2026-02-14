@@ -71,10 +71,7 @@ const Weather: React.FC<Props> = ({
         title={intl.formatMessage(messages.toggleDetails)}
       >
         {data.name && data.showCity ? <span>{data.name}</span> : null}
-        <Icon
-          icon={`feather:` + weatherCodes[conditions.weatherCode]}
-          style={{ marginLeft: 10, marginRight: 10 }}
-        />
+        <Icon icon={`feather:` + weatherCodes[conditions.weatherCode]} />
         <span className="temperature">
           {Math.round(conditions.temperature)}˚
         </span>

@@ -119,7 +119,7 @@ const Root: React.FC = () => {
     };
   }, []);
 
-  const { errors, settings, toggleErrors } = React.use(UiContext);
+  const { errors, settings, toggleErrors } = React.useContext(UiContext);
 
   return (
     <>

@@ -144,11 +144,11 @@ const Settings: React.FC = () => {
         >
           <span
             style={{
-              background: isDark ? "#2d2d2d" : "#f0f0f0",
+              background: "var(--bg-input)",
               padding: "0.3rem 0.8rem",
               borderRadius: "1rem",
               fontSize: "0.9rem",
-              color: isDark ? "#e0e0e0" : "#666",
+              color: "var(--text-main)",
               fontWeight: 500,
               display: "inline-flex",
               alignItems: "center",
