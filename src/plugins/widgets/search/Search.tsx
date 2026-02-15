@@ -10,6 +10,7 @@ import {
 import Suggestions from "./Suggestions";
 import { Props, defaultData } from "./types";
 import { buildUrl, getSearchUrl, getSuggestUrl } from "./utils";
+import { isSpecialUrl } from "../../../utils";
 import "./Search.sass";
 
 export const messages = defineMessages({
@@ -121,16 +122,40 @@ const Search: FC<Props> = ({ data = defaultData }) => {
   };
 
   const search = () => {
-    if (data.searchEngine == "default" && BUILD_TARGET != "web") {
-      browser.search.query({ text: searchInput.current!.value });
+    const query = searchInput.current!.value;
+    const url = buildUrl(
+      query,
+      getSearchUrl(data.searchEngine, data.searchEngineCustom),
+    );
+
+    // If it's a special URL, handle it regardless of search engine
+    if (isSpecialUrl(url)) {
+      if (BUILD_TARGET === "firefox") {
+        alert(
+          "Sorry, Firefox restricts access to this type of URL. This is completely out of my control.",
+        );
+        return;
+      }
+
+      if (BUILD_TARGET !== "web") {
+        browser.tabs.update({
+          url,
+        });
+      } else {
+        // Web build can just redirect
+        window.location.assign(url);
+      }
       return;
     }
-    window.location.assign(
-      buildUrl(
-        searchInput.current!.value,
-        getSearchUrl(data.searchEngine, data.searchEngineCustom),
-      ),
-    );
+
+    // If it's the default search engine and not a special URL, use browser search
+    if (data.searchEngine === "default" && BUILD_TARGET !== "web") {
+      browser.search.query({ text: query });
+      return;
+    }
+
+    // Regular search or URL for other cases
+    window.location.assign(url);
   };
 
   return (
