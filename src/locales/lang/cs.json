@@ -304,6 +304,7 @@
   "plugins.search.name": "Vyhledávání",
   "plugins.search.overrideWidth": "Override search bar width",
   "plugins.search.placeholder": "Zadejte hledaný výraz",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Poskytovatel vyhledávání",
   "plugins.search.style": "Search Style",
   "plugins.search.style.default": "Default",

@@ -304,6 +304,7 @@
   "plugins.search.name": "Kërko",
   "plugins.search.overrideWidth": "Override search bar width",
   "plugins.search.placeholder": "Shkruaj për të kërkuar",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Motor kërkimi",
   "plugins.search.style": "Search Style",
   "plugins.search.style.default": "Default",

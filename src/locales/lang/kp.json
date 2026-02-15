@@ -304,6 +304,7 @@
   "plugins.search.name": "Search",
   "plugins.search.overrideWidth": "Override search bar width",
   "plugins.search.placeholder": "검색어를 입력하십시오",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Search Provider",
   "plugins.search.style": "Search Style",
   "plugins.search.style.default": "Default",

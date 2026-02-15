@@ -304,6 +304,7 @@
   "plugins.search.name": "Pesquisa",
   "plugins.search.overrideWidth": "Override search bar width",
   "plugins.search.placeholder": "Digite para pesquisar",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Provedor de busca",
   "plugins.search.style": "Search Style",
   "plugins.search.style.default": "Default",

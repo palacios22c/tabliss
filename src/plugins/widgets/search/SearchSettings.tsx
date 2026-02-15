@@ -77,7 +77,7 @@ const SearchSettings: FC<Props> = ({ data = defaultData, setData }) => {
 
       <label>
         <FormattedMessage
-          id="plugins.search.placeholder"
+          id="plugins.search.placeholderLabel"
           defaultMessage="Placeholder Text"
           description="Search placeholder text input label"
         />

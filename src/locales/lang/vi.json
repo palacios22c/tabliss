@@ -304,6 +304,7 @@
   "plugins.search.name": "Tìm kiếm",
   "plugins.search.overrideWidth": "Ghi đè chiều rộng thanh tìm kiếm",
   "plugins.search.placeholder": "Gõ để tìm kiếm",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Nhà cung cấp tìm kiếm",
   "plugins.search.style": "Kiểu tìm kiếm",
   "plugins.search.style.default": "Mặc định",

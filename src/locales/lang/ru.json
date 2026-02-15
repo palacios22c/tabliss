@@ -304,6 +304,7 @@
   "plugins.search.name": "Поиск",
   "plugins.search.overrideWidth": "Override search bar width",
   "plugins.search.placeholder": "Введите запрос",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Поисковой движок",
   "plugins.search.style": "Search Style",
   "plugins.search.style.default": "Default",

@@ -304,6 +304,7 @@
   "plugins.search.name": "Arama",
   "plugins.search.overrideWidth": "Override search bar width",
   "plugins.search.placeholder": "Arat",
+  "plugins.search.placeholderLabel": "Placeholder Text",
   "plugins.search.provider": "Arama Sağlayıcısı",
   "plugins.search.style": "Search Style",
   "plugins.search.style.default": "Default",
