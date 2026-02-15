@@ -89,7 +89,7 @@ const config = {
             // Including it in dev would cause Chromium to fail to load the extension.
             if (!isProduction && absolutePath.endsWith("manifest.json")) {
               const manifest = JSON.parse(content.toString());
-              delete manifest.background.service_worker;
+              delete manifest.background;
               return JSON.stringify(manifest, null, 2);
             }
             return content;
