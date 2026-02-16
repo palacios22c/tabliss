@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import React, { useState, useEffect, useRef } from "react";
+import { FormattedMessage, useIntl, defineMessages } from "react-intl";
 import { UiContext } from "../../contexts/ui";
 import { exportStore, importStore, resetStore } from "../../db/action";
 import { useKeyPress } from "../../hooks";
@@ -15,6 +15,14 @@ import { db } from "../../db/state";
 import { useKey } from "../../lib/db/react";
 import { useTheme } from "../../hooks";
 
+const messages = defineMessages({
+  scrollToTop: {
+    id: "settings.scrollToTop",
+    defaultMessage: "Scroll to top",
+    description: "Tooltip for scroll to top button",
+  },
+});
+
 const Settings: React.FC = () => {
   const { toggleSettings } = React.useContext(UiContext);
   const [settingsIconPosition] = useKey(db, "settingsIconPosition");
@@ -22,6 +30,8 @@ const Settings: React.FC = () => {
   const { isDark } = useTheme();
   const intl = useIntl();
   const [isHovered, setIsHovered] = useState(true);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const planeRef = useRef<HTMLDivElement>(null);
 
   const settingsOnRight =
     settingsIconPosition === "bottomRight" ||
@@ -30,6 +40,18 @@ const Settings: React.FC = () => {
   useEffect(() => {
     setIsHovered(true);
   }, [toggleSettings]);
+
+  const handleScroll = () => {
+    if (planeRef.current) {
+      setShowScrollTop(planeRef.current.scrollTop > 200);
+    }
+  };
+
+  const scrollToTop = () => {
+    if (planeRef.current) {
+      planeRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const handleReset = () => {
     if (
@@ -119,6 +141,7 @@ const Settings: React.FC = () => {
       )}
 
       <div
+        ref={planeRef}
         className="plane"
         style={{
           left: settingsOnRight ? "auto" : 0,
@@ -129,6 +152,7 @@ const Settings: React.FC = () => {
           transition: "opacity 0.3s ease, visibility 0.3s ease",
         }}
         onMouseEnter={() => setIsHovered(true)}
+        onScroll={handleScroll}
         onMouseLeave={() => setIsHovered(false)}
       >
         <Logo />
@@ -301,6 +325,16 @@ const Settings: React.FC = () => {
           tagName="p"
         />
       </div>
+
+      {showScrollTop && (
+        <button
+          className={`button button--primary scroll-to-top ${settingsOnRight ? "scroll-to-top--right" : "scroll-to-top--left"}`}
+          onClick={scrollToTop}
+          title={intl.formatMessage(messages.scrollToTop)}
+        >
+          <Icon icon="feather:arrow-up" />
+        </button>
+      )}
     </div>
   );
 };

@@ -137,3 +137,27 @@
     hr
         border: 1px solid var(--border-light)
         margin: 1rem 0
+
+    .scroll-to-top
+        position: absolute
+        bottom: 0.5rem
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 1000
+        transition: opacity 0.3s ease, transform 0.3s ease
+
+        &--right
+            right: 338px
+
+        &--left
+            left: 338px
+
+        &:hover
+            transform: scale(1.1)
+
+        &:active
+            transform: scale(0.95)
