@@ -6,6 +6,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 I also attempt to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
+## [1.6.5] - 2/20/2026 | Error logging, new widgets, and quality-of-life improvements
+
+A solid release featuring a comprehensive error logging system, a new random color palette widget, drag-and-drop todo reordering, weather auto-update, and several UI improvements and fixes.
+
+### Added
+
+- feat: improve error logging and user feedback with comprehensive error log management, global error capture, and sharing functionality. [41d25f9a](https://github.com/BookCatKid/TablissNG/commit/41d25f9a)
+
+- feat(palette): add random color palette widget. [82fb9df6](https://github.com/BookCatKid/TablissNG/commit/82fb9df6)
+
+- feat(todo): add drag-and-drop reordering for todo items. [f19e15e1](https://github.com/BookCatKid/TablissNG/commit/f19e15e1)
+
+- feat(weather): add auto-update location feature. [52476cfa](https://github.com/BookCatKid/TablissNG/commit/52476cfa)
+
+- feat(search): add special URL handling. [5e14bcda](https://github.com/BookCatKid/TablissNG/commit/5e14bcda)
+
+- feat: add scroll-to-top button in Settings panel. [3fd010e3](https://github.com/BookCatKid/TablissNG/commit/3fd010e3)
+
+- feat(github): add tooltips to calendar widget. [f70eeb1b](https://github.com/BookCatKid/TablissNG/commit/f70eeb1b)
+
+### Changed
+
+- feat(ip-info): more robust fallbacking and parsing. [70d071da](https://github.com/BookCatKid/TablissNG/commit/70d071da)
+
+- Updated ES & IT files (#114). [762e4f48](https://github.com/BookCatKid/TablissNG/commit/762e4f48)
+
+- Update Vietnamese (vi) translation (#110). [9d6cb68e](https://github.com/BookCatKid/TablissNG/commit/9d6cb68e)
+
+### Fixed
+
+- fix: less gimmicky scroll to top button. [decec927](https://github.com/BookCatKid/TablissNG/commit/decec927)
+
+- fix(search): missing/broken translation. [f54a423a](https://github.com/BookCatKid/TablissNG/commit/f54a423a)
+
+- fix: remove whole background on chromium dev. [fb9dbb52](https://github.com/BookCatKid/TablissNG/commit/fb9dbb52)
+
+### Chore / Cleanup
+
+- chore: run translations. [bed18d2e](https://github.com/BookCatKid/TablissNG/commit/bed18d2e)
+
+- ci: update actions to latest versions in workflows. [3add9da4](https://github.com/BookCatKid/TablissNG/commit/3add9da4)
+
 ## [1.6.4] - 2/13/2026 | Theming, search customization, tally counter, and online documentation
 
 A feature-packed release with centralized theming via CSS variables, search widget customization, a new tally counter widget, and full online documentation! Additionally, the since and countdown widgets are now deprecated in favor of TimeTracker, and a lot of development work has been done under the hood to prepare for future updates and make contributions easier.
