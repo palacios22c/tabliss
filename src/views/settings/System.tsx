@@ -1,10 +1,21 @@
 import React from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, defineMessages, useIntl } from "react-intl";
 import { db, FaviconMode } from "../../db/state";
 import { useKey } from "../../lib/db/react";
 import TimeZoneInput from "../shared/timeZone/TimeZoneInput";
 import { useSystemTheme } from "../../hooks";
 import { Icon, IconButton } from "../shared";
+
+const messages = defineMessages({
+  faviconErrorSize: {
+    id: "settings.favicon.error.size",
+    defaultMessage: "Image must be smaller than 8KB",
+  },
+  faviconErrorRead: {
+    id: "settings.favicon.error.read",
+    defaultMessage: "Failed to read file. Please try again.",
+  },
+});
 
 const positions = [
   {
@@ -389,12 +400,7 @@ const System: React.FC = () => {
                   const file = e.target.files?.[0];
                   if (file) {
                     if (file.size > 8192) {
-                      alert(
-                        intl.formatMessage({
-                          id: "settings.favicon.error.size",
-                          defaultMessage: "Image must be smaller than 8KB",
-                        }),
-                      );
+                      alert(intl.formatMessage(messages.faviconErrorSize));
                       return;
                     }
                     const reader = new FileReader();
@@ -403,13 +409,7 @@ const System: React.FC = () => {
                       setFavicon({ ...favicon, data: result });
                     };
                     reader.onerror = () => {
-                      alert(
-                        intl.formatMessage({
-                          id: "settings.favicon.error.read",
-                          defaultMessage:
-                            "Failed to read file. Please try again.",
-                        }),
-                      );
+                      alert(intl.formatMessage(messages.faviconErrorRead));
                     };
                     reader.readAsDataURL(file);
                   }

@@ -21,6 +21,12 @@ const messages = defineMessages({
     defaultMessage: "Scroll to top",
     description: "Tooltip for scroll to top button",
   },
+  resetConfirm: {
+    id: "settings.reset.confirm",
+    defaultMessage:
+      "Are you sure you want to delete all of your TablissNG settings? This cannot be undone.",
+    description: "Confirmation message when resetting settings",
+  },
 });
 
 const Settings: React.FC = () => {
@@ -54,17 +60,7 @@ const Settings: React.FC = () => {
   };
 
   const handleReset = () => {
-    if (
-      confirm(
-        intl.formatMessage({
-          id: "settings.reset.confirm",
-          defaultMessage:
-            "Are you sure you want to delete all of your TablissNG settings? This cannot be undone.",
-          description: "Confirmation message when resetting settings",
-        }),
-      )
-    )
-      resetStore();
+    if (confirm(intl.formatMessage(messages.resetConfirm))) resetStore();
   };
 
   const handleExport = () => {
